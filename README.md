@@ -1,1 +1,1 @@
-# Hotel Booking Cancelation Prediction
+# Hotel Booking Cancelation Prediction Model <sub> (Deployed using Flask)</sub>
