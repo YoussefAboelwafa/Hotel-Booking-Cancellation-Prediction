@@ -1438,3 +1438,6 @@ for model, score in scores.items():
 
 
 # Deployment
+![Screenshot from 2023-12-03 02-02-20](https://github.com/YoussefAboelwafa/Hotel-Booking-Cancellation-Prediction/assets/96186143/f1e5e966-c396-4d34-88d0-6677b0c9073d)
+![Screenshot from 2023-12-03 02-04-13](https://github.com/YoussefAboelwafa/Hotel-Booking-Cancellation-Prediction/assets/96186143/76ec3080-e2c2-4127-8128-02657a073677)
+
