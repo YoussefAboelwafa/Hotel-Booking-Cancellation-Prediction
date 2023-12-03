@@ -1,4 +1,4 @@
-# Hotel Booking Cancellation Prediction Using Multiple Models & Deployed Using Flask
+# Hotel Booking Cancellation Prediction Using Multiple Models (Flask Deployment)
 
 **Preprocessing:**
 
