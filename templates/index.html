@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hotel Reservation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script
+            src="https://kit.fontawesome.com/6d56012fea.js"
+            crossorigin="anonymous"
+    ></script>
+    <style>
+        .container {
+            font-family: "Montserrat", sans-serif;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        h1{
+            font-weight: 900;
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        .form-section {
+            width: 70%;
+        }
+
+        .result-section {
+            width: 20%;
+        }
+
+        i {
+            color: #00006e;
+        }
+
+        input[type="number"] {
+            width: 90%;
+            border-radius: 10px;
+            -moz-appearance: textfield;
+        }
+
+        #ans {
+            font-weight: 700;
+            font-size: 28px;
+        }
+
+        .result {
+            font-size: larger;
+        }
+
+        .result-content p {
+            margin-top: 30px;
+        }
+        label {
+            font-weight: 500;
+            font-size: large;
+        }
+
+        input[type="radio"] {
+            margin-right: 20px;
+        }
+        h1{
+            font-weight: 700;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+        .btn-primary{
+            margin-top: 20px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body style="background-color: rgba(225,238,255,0.64)">
+<div class="container">
+    <form action="/predict" class="form-group form-section" method="post">
+        <h1>Hotel Reservation Cancellation Prediction <i class="fa-solid fa-hotel"></i></h1>
+        <div class="mb-3">
+            <label for="lead_time" class="form-label"><strong>Lead Time:</strong> <br>(Number of days between the booking date and the arrival date)</label>
+            <input type="number" class="form-control" id="lead_time" required
+                   placeholder="Enter Lead Time" name="lead_time"/>
+        </div>
+        <hr>
+        <div>
+            <label for="avg_price" class="form-label"><strong>Average Price:</strong></label>
+            <input type="number" class="form-control" id="avg_price" required
+                   placeholder="Enter Average Price" name="avg_price"/>
+        </div>
+        <hr>
+        <div class="mb-3">
+            <label for="special_request" class="form-label"><strong>Number of Special Requests:</strong></label>
+            <input type="number" class="form-control" id="special_request" required
+                   placeholder="Enter Number of Special Requests" name="special_request"/>
+        </div>
+        <hr>
+        <div class="mb-3">
+            <label for="year" class="form-label"><strong>Reservation year:</strong></label>
+            <input type="number" class="form-control" id="year" required
+                   placeholder="Enter Reservation Year" name="year"/>
+        </div>
+        <hr>
+        <div>
+            <label class="form-label"><strong>Booking Method:</strong> </label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="method" id="online" value="1">
+                <label class="form-check-label" for="online">Online</label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="method" id="onsite" value="0" checked>
+                <label class="form-check-label" for="onsite">Onsite</label>
+            </div>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div class="result result-section">
+        <h2>Result <i class="fa-solid fa-scroll"></i></h2>
+        <div class="result-content">
+            <p>Reservation: <br><span id="ans">{{prediction}}</span></p>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
